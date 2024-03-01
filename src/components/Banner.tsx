@@ -14,17 +14,18 @@ export const Banner = () => {
   const period = 2000;
 
   useEffect(() => {
-    let ticker = setInterval(() => {
+    const ticker = setInterval(() => {
       tick();
     }, delta);
 
     return () => { clearInterval(ticker) };
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [text])
 
   const tick = () => {
-    let i = loopNum % toRotate.length;
-    let fullText = toRotate[i];
-    let updatedText = isDeleting ? fullText.substring(0, text.length - 1) : fullText.substring(0, text.length + 1);
+    const i = loopNum % toRotate.length;
+    const fullText = toRotate[i];
+    const updatedText = isDeleting ? fullText.substring(0, text.length - 1) : fullText.substring(0, text.length + 1);
 
     setText(updatedText);
 
@@ -51,9 +52,9 @@ export const Banner = () => {
               {({ isVisible }) =>
               <div className={isVisible ? "animate__animated animate__fadeIn" : ""}>
                 <span className="tagline">Bem-vindo ao meu Portfólio</span>
-                <h1>{`Oi! Me chamo Alexandre ;)`} <br/> <span className="txt-rotate" data-rotate='[ "Web Developer", "Web Designer", "UI/UX Designer" ]'><span className="wrap">{text}</span></span></h1>
+                <h1><span className="txt-rotate" data-rotate='[ "Web Developer", "Web Designer", "UI/UX Designer" ]'><span className="wrap">{text}</span></span></h1>
                   <p>Formado em ADS, com desempenho em evoluir como Desenvolvedor Front-end, atuando como Analista em Helpdesk Jr. na Plugify Tecnologia realizando diversos processos referente a atendimento ao cliente, infraestrutura e segurança, além do foco em desenvolver melhorias internas voltadas a tecnologia/automação de processos. Possuindo 5 anos de experiência com atendimento e orientação aos clientes, administração e controle de estoque/materiais, auxílio na manutenção/instalação de softwares e dispositivos externos. 2 anos trabalhando como voluntário no projeto Escola da Família, sendo professor de informática básica para crianças e jovens. Além de possuir cursos complementares/profissionalizantes na área de tecnologia da informação.</p>
-                  <button onClick={() => console.log('connect')}>Entre em contato<ArrowRightCircle size={25} /></button>
+                  <button onClick={() => console.log('connect')}>Entre em contato<br></br><ArrowRightCircle size={25}/></button><br></br><br></br>
               </div>}
             </TrackVisibility>
           </Col>

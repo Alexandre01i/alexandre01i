@@ -36,7 +36,7 @@ export const Skills = () => {
                         <p>
                           
                           
-                          .<br></br> Lorem Ipsum has been the industry's standard dummy text.</p>
+                        </p>
                         <Carousel responsive={responsive} infinite={true} className="owl-carousel owl-theme skill-slider">
                             <div className="item">
                                 <img src={meter1} alt="Image" />
@@ -52,7 +52,7 @@ export const Skills = () => {
                             </div>
                             <div className="item">
                                 <img src={meter1} alt="Image" />
-                                <h5>Front-end</h5>
+                                <h5>UI/UX</h5>
                             </div>
                         </Carousel>
                     </div>
